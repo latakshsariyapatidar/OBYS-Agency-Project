@@ -1,3 +1,11 @@
+/* Loading my custom fonts */
+@font-face {
+    font-family: 'silk serif';
+    src: url("./silkserif-lightitalic-webfont.ttf");
+  }
+
+
+
 html, body{
     height: 100%;
     width: 100%;
