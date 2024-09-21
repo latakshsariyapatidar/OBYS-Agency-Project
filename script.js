@@ -63,12 +63,16 @@ function loader() {
         opacity: 0,
         duration: 0.5,
       });
+
+      gsap.to("#main", {
+        display: "block"
+      })
     }
   }, 3500);
 
   gsap.to("#loader", {
     display: "none",
-    delay: 4.5,
+    delay: 4,
     duration: 0.1,
   });
 
@@ -77,7 +81,7 @@ function loader() {
     duration: 1,
     ease: "power2.inOut",
     opacity: 0,
-    delay: 4,
+    delay: 3.5,
   });
 }
 
