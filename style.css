@@ -1,140 +1,208 @@
 /* Loading my custom fonts */
 @font-face {
-    font-family: 'silk serif';
-    src: url("./silkserif-lightitalic-webfont.ttf");
-  }
-
-
-
-html, body{
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
+  font-family: "silk serif";
+  src: url("./silkserif-lightitalic-webfont.ttf");
 }
 
-*{
-    margin: 0px;
-    padding: 0px;
-    font-family: 'gilroy';
-    color: white;
+html,
+body {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "gilroy";
+  color: white;
 }
 
 /* Loader Styles */
-#loader{
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    z-index: 999;
-    background-color: #0b0b0b;
-    padding: 15vh 10vw;
+#loader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  background-color: #0b0b0b;
+  padding: 15vh 10vw;
 }
 
-.line{
-    font-size: 3.8vw;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 3vw;
-    height: fit-content;
-    overflow: hidden;
+.line {
+  font-size: 4vw;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3vw;
+  height: fit-content;
+  overflow: hidden;
+  line-height: 7vw;
 }
 
-#line1-part1{
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 1vw;
-    height: 100px;
+#line1-part1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1vw;
+  height: 100px;
 }
 
-#line1-part1 h3, #line1-part1 h4{
-    font-family: 'silk serif';
+#line1-part1 h3,
+#line1-part1 h4 {
+  font-family: "silk serif";
 }
 
-#line1-part1 h4{
-    font-size: 3.5vw;
-    width: 5vw;
-    text-align: right;
-    font-weight: 500;
+#line1-part1 h4 {
+  font-size: 3.5vw;
+  width: 5vw;
+  text-align: right;
+  font-weight: 500;
 }
 
-#line1-part1 h3{
-    font-size: 3.5vw;
-    font-weight: 500;
-
+#line1-part1 h3 {
+  font-size: 3.5vw;
+  font-weight: 500;
 }
 
-#loader p{
-    margin-top: 5vh;
-    margin-left: 10vw;
+#loader p {
+  margin-top: 5vh;
+  margin-left: 10vw;
 }
 
-.line h1{
-    font-weight: 500;
+.line h1 {
+  font-weight: 500;
 }
 
-.line h2{
-    font-size: 5.5vw;
-    opacity: 0;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
-    font-weight: 100;
+.line h2 {
+  font-size: 5.5vw;
+  opacity: 0;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  font-weight: 100;
 }
 
 /* Creating animation for NOW blinking in Loader */
 @keyframes now_animation {
-    0%{
-        opacity: 1;
-        font-family: 'gilroy';
-        font-weight: 500;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: white;      
-    }
-    47%{     
-        opacity: 0;
-        font-family: 'gilroy';
-        font-weight: 500;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: white;      
-    }
-    53%{
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: white;        
-        opacity: 1;
-        font-family: 'silk serif';
-        color: transparent;
-    }
-    100%{
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: white;        
-        opacity: 0;
-        font-family: 'silk serif';
-        color: transparent;
-    }
+  0% {
+    opacity: 1;
+    font-family: "gilroy";
+    font-weight: 500;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+  }
+  47% {
+    opacity: 0;
+    font-family: "gilroy";
+    font-weight: 500;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+  }
+  53% {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    opacity: 1;
+    font-family: "silk serif";
+    color: transparent;
+  }
+  100% {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    opacity: 0;
+    font-family: "silk serif";
+    color: transparent;
+  }
 }
 
 /* Main Website Styles */
-#main{
-    /* position: relative; */
-    background-color: #111;
-    display: none;
+#main {
+  /* position: relative; */
+  background-color: #111;
+  display: none;
 }
 
-#page1{
-    height: 100vh;
-    width: 100%;
-    background-color: #0b0b0b;
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
 }
 
-#page2{
-    height: 100vh;
-    width: 100%;
-    background-color: #c22525;
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
 }
 
-#page3{
-    height: 100vh;
-    width: 100%;
-    background-color: #0b0b0b;
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+
+#page1 {
+  height: 100vh;
+  width: 100%;
+  background-color: #151515;
+}
+#navigation-bar #images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+}
+
+#navigation-bar #dots {
+  height: 1vw;
+  width: 1vw;
+  color: white;
+}
+
+#navigation-bar #dots img {
+  color: white;
+}
+
+#navigation-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.2vw 5.5vw;
+}
+
+#navigation-bar-part2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 75%;
+}
+
+#navigation-bar-part2 h4 {
+  font-size: 0.8vw;
+  font-weight: 300;
+}
+
+#navigation-bar-part2 h3 {
+  font-size: 01vw;
+  font-weight: 400;
+}
+
+#navigation-bar-part2-part2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2vw;
+}
+
+#page2 {
+  height: 100vh;
+  width: 100%;
+  background-color: #151515;
+}
+
+#page3 {
+  height: 100vh;
+  width: 100%;
+  background-color: #151515;
 }
