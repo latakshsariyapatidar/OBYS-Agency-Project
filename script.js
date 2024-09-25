@@ -83,16 +83,25 @@ function loader() {
     opacity: 0,
     delay: 3.5,
   });
+
+  gsap.from("#hero1, #hero2, #hero3, #hero4", {
+    y: 200,
+    duration: 1,
+    opacity: 0,
+    delay: 4.2,
+    stagger: 0.2,
+    ease: "power3"
+  })
   gsap.to("#crsr", {
     opacity: 1,
     delay: 3.5
   })
 }
-function makeCrsrBigger(e){
+function makeCrsrBigger(e, n){
   e.addEventListener("mouseenter",function(){
     gsap.to("#crsr", {
-      height: "3vw",
-      width: "3vw",
+      height: `${n}vw`,
+      width: `${n}vw`,
       duration: 0.2,
       backgroundColor: "white",
       mixBlendMode: "difference",
@@ -122,6 +131,32 @@ function cusrFollow(){
 function magnet(e){
   Shery.makeMagnet(e , {});
 }
+function borderVanisher(e){
+  e.addEventListener("mouseenter", function(){
+    gsap.to(e, {
+      borderBottom: "10px solid rgba(255 255 255 0)",
+      duration: 0.05,
+      
+    })
+  })
+
+  e.addEventListener("mouseleave", function(){
+    gsap.to(e, {
+      borderBottom: "10px solid rgb(255 255 255)",
+      duration: 0.05
+    })
+  })
+}
+
+var flag = document.querySelector("#flag-img");
+
+
+
+
+
+
+
+
 
 
 
@@ -130,14 +165,52 @@ var about_element = document.querySelector("#about")
 var contact_element = document.querySelector("#contacts")
 var menu = document.querySelector("#dots");
 var obys_logo = document.querySelector("#images svg");
+var heroWeb = document.querySelector("#hero3-web");
+var heroGraphic = document.querySelector("#hero3-graphic");
+var hero1 = document.querySelector("#hero1");
+var hero2 = document.querySelector("#hero2");
+var hero3 = document.querySelector("#hero3");
+var hero4 = document.querySelector("#hero4");
+
+
+hero3.addEventListener("mouseenter", function(){
+  gsap.to(flag, {
+    opacity : 1,
+    duration: 0.05
+  })
+})
+
+hero3.addEventListener("mousemove",function(e){
+  gsap.to(flag, {
+    top: e.y,
+    left: e.x,
+    duration: 1,
+    ease: "power4",
+  })
+})
+
+hero3.addEventListener("mouseleave",function(){
+gsap.to(flag, {
+  opacity : 0,
+  duration: 0.05
+})
+})
+
+
 
 
 loader();
 cusrFollow();
-makeCrsrBigger(work_element);
-makeCrsrBigger(about_element);
-makeCrsrBigger(contact_element);
-makeCrsrBigger(menu);
-makeCrsrBigger(obys_logo);
-magnet("#navigation-bar-part2-part2 h3")
-magnet("#navigation-bar #dots")
+makeCrsrBigger(work_element, 3);
+makeCrsrBigger(about_element, 3);
+makeCrsrBigger(contact_element, 3);
+makeCrsrBigger(menu, 3);
+makeCrsrBigger(obys_logo, 3);
+makeCrsrBigger(hero1, 6);
+makeCrsrBigger(hero2, 6);
+makeCrsrBigger(hero4, 6);
+
+magnet("#navigation-bar-part2-part2 h3");
+magnet("#navigation-bar #dots");
+borderVanisher(heroWeb);
+borderVanisher(heroGraphic);

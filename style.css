@@ -4,11 +4,32 @@
   src: url("./silkserif-lightitalic-webfont.ttf");
 }
 
+h1:hover{
+  cursor:default;
+}
+
+h2:hover{
+  cursor: default;
+}
+
+h3:hover{
+  cursor: default;
+}
+
+h4:hover{
+  cursor: default;
+}
+
+p:hover{
+  cursor: default;
+}
+
 html,
 body {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 * {
@@ -155,7 +176,7 @@ body {
 }
 
 #page1 {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background-color: #151515;
 }
@@ -198,8 +219,8 @@ body {
 }
 
 #navigation-bar-part2 h4 {
-  font-size: 0.8vw;
-  font-weight: 300;
+  font-size: 1vw;
+  font-weight: 400;
 }
 
 #navigation-bar-part2 h3 {
@@ -213,6 +234,114 @@ body {
   justify-content: space-around;
   gap: 2vw;
 }
+
+#hero{
+  height: 65vh;
+  /* background-color: red; */
+  width: 100%;
+  padding: 5vh 0vh 0vh 0vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2vh;
+  margin-left: 2vw;
+}
+
+#hero1::before{
+  content: '01';
+  font-family: 'silk serif';
+  position: absolute;
+  left: -15%;
+  -webkit-text-stroke: 0px transparent;
+  font-size: 3vw;
+}
+
+
+
+.hero{
+  height: 100%;
+  width: 50%;
+  /* background-color: grey; */
+}
+
+#hero3{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+#hero p{
+  position: absolute;
+  left: 5%;
+  bottom: 15%;
+  overflow: hidden;
+  animation: scrollAnimation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+ #flag-img {
+  position: absolute;
+  height: 30vw;
+  width: 20vw;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+
+ #flag-img img{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+
+}
+
+@keyframes scrollAnimation {
+  0% {
+    opacity: 100%;
+  }
+
+  50%{
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+.hero h1{
+  font-size: 7vw;
+  font-weight: 600;
+  line-height: 16vh;
+  text-transform: uppercase;
+}
+
+.hero h2, .hero h3{
+  font-size: 7vw;
+  font-weight: 600;
+  line-height: 16vh;
+  text-transform: uppercase;
+}
+
+.hero h2{
+  border-bottom: 10px solid white;
+  transition: all 0.1s ease-in-out;
+}
+
+
+.hero h2:hover{
+  -webkit-text-stroke: 1px white;
+  color: transparent;
+}
+
+.hero h2:hover #flag-img{
+  opacity : 100%;
+}
+
 
 #page2 {
   height: 100vh;
