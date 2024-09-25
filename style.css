@@ -18,6 +18,19 @@ body {
   color: white;
 }
 
+#crsr{
+  height: 2vw;
+  width: 2vw;
+  transform: translate(-50%, -50%);
+  border: 3px solid white;
+  position: absolute;
+  z-index: 999999;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+
+}
+
 /* Loader Styles */
 #loader {
   position: fixed;
@@ -48,8 +61,7 @@ body {
   height: 100px;
 }
 
-#line1-part1 h3,
-#line1-part1 h4 {
+#line1-part1 h3, #line1-part1 h4 {
   font-family: "silk serif";
 }
 
@@ -147,6 +159,7 @@ body {
   width: 100%;
   background-color: #151515;
 }
+
 #navigation-bar #images {
   display: flex;
   align-items: center;
@@ -154,10 +167,16 @@ body {
   gap: 2vw;
 }
 
+#navigation-bar #images svg{
+  position: absolute;
+  left: 8.5%;
+}
+
 #navigation-bar #dots {
   height: 1vw;
   width: 1vw;
   color: white;
+  filter: invert(100%);
 }
 
 #navigation-bar #dots img {

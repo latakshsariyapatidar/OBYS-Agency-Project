@@ -83,8 +83,61 @@ function loader() {
     opacity: 0,
     delay: 3.5,
   });
+  gsap.to("#crsr", {
+    opacity: 1,
+    delay: 3.5
+  })
+}
+function makeCrsrBigger(e){
+  e.addEventListener("mouseenter",function(){
+    gsap.to("#crsr", {
+      height: "3vw",
+      width: "3vw",
+      duration: 0.2,
+      backgroundColor: "white",
+      mixBlendMode: "difference",
+    })
+  })
+  
+  
+  e.addEventListener("mouseleave",function(){
+    gsap.to("#crsr", {
+      height: "2vw",
+      width: "2vw",
+      duration: 0.2,
+      backgroundColor: "transparent",
+      mixBlendMode: "difference",
+  })})
+}
+function cusrFollow(){
+  document.addEventListener("mousemove", function(e){
+    gsap.to("#crsr", {
+      top : e.y,
+      left: e.x,
+      duration: 0.5,
+      
+    })
+  })
+}
+function magnet(e){
+  Shery.makeMagnet(e , {});
 }
 
 
 
+var work_element = document.querySelector("#works")
+var about_element = document.querySelector("#about")
+var contact_element = document.querySelector("#contacts")
+var menu = document.querySelector("#dots");
+var obys_logo = document.querySelector("#images svg");
+
+
 loader();
+cusrFollow();
+makeCrsrBigger(work_element);
+makeCrsrBigger(about_element);
+makeCrsrBigger(contact_element);
+makeCrsrBigger(menu);
+makeCrsrBigger(obys_logo);
+magnet("#navigation-bar-part2-part2 h3")
+magnet("#navigation-bar #dots")

@@ -17,10 +17,16 @@
       href="https://gistcdn.githack.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css"
     />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sheryjs/dist/Shery.css" />
+
+
     <!-- //Adding the custom css file to the code. -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Creating a following mouse -->
+    <div id="crsr"></div>
+
     <!-- Creating the LOADER for loading the website -->
     <div id="loader">
       <div class="line">
@@ -105,9 +111,9 @@
             </h4>
 
             <div id="navigation-bar-part2-part2">
-              <h3>Works</h3>
-              <h3>About</h3>
-              <h3>Contacts</h3>
+              <h3 id="works">Works</h3>
+              <h3 id="about">About</h3>
+              <h3 id="contacts">Contacts</h3>
             </div>
           </div>
 
@@ -140,6 +146,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+
+    <script  type="text/javascript"  src="https://cdn.jsdelivr.net/npm/sheryjs/dist/Shery.js"></script>
+
     <script src="./script.js"></script>
   </body>
 </html>
