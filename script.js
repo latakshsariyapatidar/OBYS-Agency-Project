@@ -84,6 +84,14 @@ function loader() {
     delay: 3.5,
   });
 
+  gsap.from("#page2", {
+    y : 1500,
+    duration : 1,
+    ease: "power2.inOut",
+    opacity: 0,
+    delay: 4
+  })
+
   gsap.from("#hero1, #hero2, #hero3, #hero4", {
     y: 200,
     duration: 1,
@@ -97,8 +105,8 @@ function loader() {
     delay: 3.5
   })
 }
-function makeCrsrBigger(e, n){
-  e.addEventListener("mouseenter",function(){
+function makeCrsrBigger(e, n) {
+  e.addEventListener("mouseenter", function () {
     gsap.to("#crsr", {
       height: `${n}vw`,
       width: `${n}vw`,
@@ -107,40 +115,41 @@ function makeCrsrBigger(e, n){
       mixBlendMode: "difference",
     })
   })
-  
-  
-  e.addEventListener("mouseleave",function(){
+
+
+  e.addEventListener("mouseleave", function () {
     gsap.to("#crsr", {
       height: "2vw",
       width: "2vw",
       duration: 0.2,
       backgroundColor: "transparent",
       mixBlendMode: "difference",
-  })})
-}
-function cusrFollow(){
-  document.addEventListener("mousemove", function(e){
-    gsap.to("#crsr", {
-      top : e.y,
-      left: e.x,
-      duration: 0.5,
-      
     })
   })
 }
-function magnet(e){
-  Shery.makeMagnet(e , {});
+function cusrFollow(el) {
+  document.addEventListener("mousemove", function (e) {
+    gsap.to(el, {
+      top: e.y,
+      left: e.x,
+      duration: 0.5,
+
+    })
+  })
 }
-function borderVanisher(e){
-  e.addEventListener("mouseenter", function(){
+function magnet(e) {
+  Shery.makeMagnet(e, {});
+}
+function borderVanisher(e) {
+  e.addEventListener("mouseenter", function () {
     gsap.to(e, {
       borderBottom: "10px solid rgba(255 255 255 0)",
       duration: 0.05,
-      
+
     })
   })
 
-  e.addEventListener("mouseleave", function(){
+  e.addEventListener("mouseleave", function () {
     gsap.to(e, {
       borderBottom: "10px solid rgb(255 255 255)",
       duration: 0.05
@@ -148,17 +157,54 @@ function borderVanisher(e){
   })
 }
 
-var flag = document.querySelector("#flag-img");
+function flagFollower() {
+  var flag = document.querySelector("#flag-img");
+  hero3.addEventListener("mouseenter", function () {
+    gsap.to(flag, {
+      opacity: 1,
+      duration: 0.05
+    })
+  })
 
+  hero3.addEventListener("mousemove", function (e) {
+    gsap.to(flag, {
+      top: e.y,
+      left: e.x,
+      duration: 1,
+      ease: "power4",
+    })
+  })
 
+  hero3.addEventListener("mouseleave", function () {
+    gsap.to(flag, {
+      opacity: 0,
+      duration: 0.05
+    })
+  })
+}
 
-
-
-
-
-
-
-
+function videoPlayer(){
+  var videoContainer = document.querySelector("#videoContainer video");
+  var imageContainer = document.querySelector("#videoContainer img");
+  
+  videoContainer.addEventListener("click", function(e){
+    if (videoContainer.paused){
+      console.log("Paused");
+      videoContainer.play();
+      gsap.to(imageContainer, {
+        opacity: 0,
+        duration: 0.3
+      })
+    }else{
+      console.log("Playing");
+      videoContainer.pause();
+      gsap.to(imageContainer, {
+        opacity: 1,
+        duration: 0.3
+      })
+    }
+  })
+}
 
 var work_element = document.querySelector("#works")
 var about_element = document.querySelector("#about")
@@ -172,35 +218,28 @@ var hero2 = document.querySelector("#hero2");
 var hero3 = document.querySelector("#hero3");
 var hero4 = document.querySelector("#hero4");
 
-
-hero3.addEventListener("mouseenter", function(){
-  gsap.to(flag, {
-    opacity : 1,
-    duration: 0.05
+var videoPlayButton = document.querySelector("#playButton");
+var videoContainer = document.querySelector("#videoContainer");
+videoContainer.addEventListener("mouseenter", function(e){
+  console.log("enter");
+  makeCrsrBigger(videoContainer, 10);
+  gsap.to(videoPlayButton, {
+    opacity: 0,
+    duration: 0.3
   })
 })
-
-hero3.addEventListener("mousemove",function(e){
-  gsap.to(flag, {
-    top: e.y,
-    left: e.x,
-    duration: 1,
-    ease: "power4",
+videoContainer.addEventListener("mouseleave", function(e){
+  console.log("exit");
+  gsap.to(videoPlayButton, {
+    opacity: 1,
+    duration: 0.3
   })
 })
-
-hero3.addEventListener("mouseleave",function(){
-gsap.to(flag, {
-  opacity : 0,
-  duration: 0.05
-})
-})
-
 
 
 
 loader();
-cusrFollow();
+cusrFollow(document.querySelector("#crsr"));
 makeCrsrBigger(work_element, 3);
 makeCrsrBigger(about_element, 3);
 makeCrsrBigger(contact_element, 3);
@@ -209,6 +248,8 @@ makeCrsrBigger(obys_logo, 3);
 makeCrsrBigger(hero1, 6);
 makeCrsrBigger(hero2, 6);
 makeCrsrBigger(hero4, 6);
+flagFollower();
+videoPlayer();
 
 magnet("#navigation-bar-part2-part2 h3");
 magnet("#navigation-bar #dots");

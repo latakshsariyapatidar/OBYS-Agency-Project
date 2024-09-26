@@ -4,31 +4,12 @@
   src: url("./silkserif-lightitalic-webfont.ttf");
 }
 
-h1:hover{
-  cursor:default;
-}
-
-h2:hover{
-  cursor: default;
-}
-
-h3:hover{
-  cursor: default;
-}
-
-h4:hover{
-  cursor: default;
-}
-
-p:hover{
-  cursor: default;
-}
-
 html,
 body {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
+  background-color: #151515;
   overflow-x: hidden;
 }
 
@@ -45,7 +26,7 @@ body {
   transform: translate(-50%, -50%);
   border: 3px solid white;
   position: absolute;
-  z-index: 999999;
+  z-index: 999999999;
   border-radius: 50%;
   pointer-events: none;
   opacity: 0;
@@ -71,7 +52,7 @@ body {
   gap: 3vw;
   height: fit-content;
   overflow: hidden;
-  line-height: 7vw;
+  line-height: 8vw;
 }
 
 #line1-part1 {
@@ -150,8 +131,8 @@ body {
 /* Main Website Styles */
 #main {
   /* position: relative; */
-  background-color: #111;
   display: none;
+  cursor: none;
 }
 
 /* width */
@@ -347,6 +328,48 @@ body {
   height: 100vh;
   width: 100%;
   background-color: #151515;
+}
+
+#page2 #videoContainer{
+  height: 65%;
+  width: 70%;
+  margin-left: 30%;
+  position: relative;
+  margin-top: 10vh;
+}
+
+#page2 #videoContainer video{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+#page2 #videoContainer img{
+  
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 99;
+  pointer-events: none;
+}
+
+#page2 #videoContainer #playButton {
+  position: absolute;
+  height: 10vw;
+  width: 10vw;
+  background-color: #FFA63D;
+  z-index: 999;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top:-13%;
+  right: 20%;
+}
+
+#page2 #videoContainer #playButton i{
+  font-size: 2vw;
 }
 
 #page3 {
