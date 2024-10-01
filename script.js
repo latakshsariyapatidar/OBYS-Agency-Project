@@ -217,6 +217,9 @@ var hero1 = document.querySelector("#hero1");
 var hero2 = document.querySelector("#hero2");
 var hero3 = document.querySelector("#hero3");
 var hero4 = document.querySelector("#hero4");
+var aboutObys = document.querySelector("#page4 h1");
+var aboutObysContent = document.querySelector ("#page4 h3");
+var aboutObysContent2 = document.querySelector("#page4 #img-container");
 
 var videoPlayButton = document.querySelector("#playButton");
 var videoContainer = document.querySelector("#videoContainer");
@@ -248,6 +251,10 @@ makeCrsrBigger(obys_logo, 3);
 makeCrsrBigger(hero1, 6);
 makeCrsrBigger(hero2, 6);
 makeCrsrBigger(hero4, 6);
+makeCrsrBigger(aboutObys, 6);
+makeCrsrBigger(aboutObysContent, 6);
+makeCrsrBigger(aboutObysContent2, 6);
+
 flagFollower();
 videoPlayer();
 
