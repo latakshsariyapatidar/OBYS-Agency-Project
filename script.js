@@ -1,3 +1,8 @@
+// const scroll = new LocomotiveScroll({
+//   el: document.querySelector('#main'),
+//   smooth: true
+// });
+
 function loader() {
   // Creating a GSAP Timeline
   var tl = gsap.timeline();
@@ -156,7 +161,6 @@ function borderVanisher(e) {
     })
   })
 }
-
 function flagFollower() {
   var flag = document.querySelector("#flag-img");
   hero3.addEventListener("mouseenter", function () {
@@ -182,7 +186,6 @@ function flagFollower() {
     })
   })
 }
-
 function videoPlayer(){
   var videoContainer = document.querySelector("#videoContainer video");
   var imageContainer = document.querySelector("#videoContainer img");
@@ -223,6 +226,7 @@ var aboutObysContent2 = document.querySelector("#page4 #img-container");
 
 var videoPlayButton = document.querySelector("#playButton");
 var videoContainer = document.querySelector("#videoContainer");
+
 videoContainer.addEventListener("mouseenter", function(e){
   console.log("enter");
   makeCrsrBigger(videoContainer, 10);
@@ -262,3 +266,11 @@ magnet("#navigation-bar-part2-part2 h3");
 magnet("#navigation-bar #dots");
 borderVanisher(heroWeb);
 borderVanisher(heroGraphic);
+
+
+Shery.imageEffect("#project1 #images", {
+  style: 6,
+  // debug: true,
+  gooey: true,
+  // preset : "./gooey.json",
+});
